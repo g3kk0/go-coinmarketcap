@@ -17,3 +17,28 @@ import coinmarketcap "github.com/g3kk0/go-coinmarketcap"
 
 cmc := coinmarketcap.NewClient()
 ```
+
+### Get Latest Quotes
+
+```go
+// by id
+params := map[string]string{"id": "1"}
+quote, err := cmc.QuotesLatest(params)
+if err != nil {
+    panic(err)
+}
+
+// by symbol
+params := map[string]string{"symbol": "eth"}
+quote, err := cmc.QuotesLatest(params)
+if err != nil {
+    panic(err)
+}
+
+// specify quote currency (default: usd)
+params := map[string]string{"symbol": "bch", "convert": "gbp"}
+quote, err := cmc.QuotesLatest(params)
+if err != nil {
+    panic(err)
+}
+```
