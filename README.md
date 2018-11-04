@@ -35,6 +35,13 @@ if err != nil {
     panic(err)
 }
 
+// request multiple symbols (works for ids too)
+params := map[string]string{"symbol": "bch,eth"}
+quotes, err := cmc.QuotesLatest(params)
+if err != nil {
+    panic(err)
+}
+
 // specify quote currency (default: usd)
 params := map[string]string{"symbol": "bch", "convert": "gbp"}
 quote, err := cmc.QuotesLatest(params)
