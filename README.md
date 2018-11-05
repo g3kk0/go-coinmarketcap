@@ -15,7 +15,9 @@ Import package and create client.
 ```go
 import coinmarketcap "github.com/g3kk0/go-coinmarketcap"
 
-cmc := coinmarketcap.NewClient()
+key := os.Getenv("COINMARKETCAP_KEY")
+
+cmc := coinmarketcap.NewClient(key)
 ```
 
 ### Get Latest Quotes
